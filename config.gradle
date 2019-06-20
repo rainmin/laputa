@@ -1,0 +1,74 @@
+/**
+ *  全局统一配置文件
+ */
+ext {
+    //true 每个业务Module可以单独开发
+    //false 每个业务Module以lib的方式运行
+    //修改之后需要Sync方可生效
+    isModule = false
+
+    versions = [
+            versionCode                         : 1,
+            versionName                         : "1.0",
+
+            compileSdkVersion                   : 28,
+            buildToolsVersion                   : "28.0.3",
+            minSdkVersion                       : 21,
+            targetSdkVersion                    : 28,
+
+            multidexVersion                     : "2.0.1",
+            appcompatVersion                    : "1.0.0",
+            materialVersion                     : "1.0.0-rc02",
+            constraintlayoutVersion             : "1.1.3",
+            supportV4Version                    : "1.0.0-rc02",
+
+            daggerVersion                       : "2.21",
+            permissionsdispatcherVersion        : "4.3.0",
+            butterknifeVersion                  : "10.1.0",
+            litepalVersion                      : "3.0.0",
+            retrofitVersion                     : "2.5.0",
+            okhttpVersion                       : "3.13.1",
+            rxjavaVersion                       : "2.2.6",
+            rxandroidVersion                    : "2.0.1",
+            baseRecyclerViewAdapterHelperVersion: "2.9.46",
+            loggerVersion                       : "2.2.0",
+            amap3dmapVersion                    : "6.7.0",
+            zloadingVersion                     : "1.2.0",
+            bannerVersion                       : "1.4.10",
+            glideVersion                        : "4.9.0"
+    ]
+
+
+    dependencies = [
+            "multidex"                       : "androidx.multidex:multidex:${versions["multidexVersion"]}",
+            "appcompat"                      : "androidx.appcompat:appcompat:${versions["appcompatVersion"]}",
+            "material"                       : "com.google.android.material:material:${versions["materialVersion"]}",
+            "constraintlayout"               : "androidx.constraintlayout:constraintlayout:${versions["constraintlayoutVersion"]}",
+            "suppprt-v4"                     : "androidx.legacy:legacy-support-v4:${versions["supportV4Version"]}",
+
+            "dagger"                         : "com.google.dagger:dagger:${versions["daggerVersion"]}",
+            "dagger-compiler"                : "com.google.dagger:dagger-compiler:${versions["daggerVersion"]}",
+            "dagger-android"                 : "com.google.dagger:dagger-android:${versions["daggerVersion"]}",
+            "dagger-android-support"         : "com.google.dagger:dagger-android-support:${versions["daggerVersion"]}",
+            "dagger-android-processor"       : "com.google.dagger:dagger-android-processor:${versions["daggerVersion"]}",
+            "permissionsdispatcher"          : "org.permissionsdispatcher:permissionsdispatcher:${versions["permissionsdispatcherVersion"]}",
+            "permissionsdispatcher_processor": "org.permissionsdispatcher:permissionsdispatcher-processor:${versions["permissionsdispatcherVersion"]}",
+            "butterknife"                    : "com.jakewharton:butterknife:${versions["butterknifeVersion"]}",
+            "butterknife_compiler"           : "com.jakewharton:butterknife-compiler:${versions["butterknifeVersion"]}",
+            "litepal"                        : "org.litepal.android:java:${versions["litepalVersion"]}",
+            "retrofit"                       : "com.squareup.retrofit2:retrofit:${versions["retrofitVersion"]}",
+            "retrofit-converter-gson"        : "com.squareup.retrofit2:converter-gson:${versions["retrofitVersion"]}",
+            "retrofit-adapter-rxjava2"       : "com.squareup.retrofit2:adapter-rxjava2:${versions["retrofitVersion"]}",
+            "okhttp"                         : "com.squareup.okhttp3:okhttp:${versions["okhttpVersion"]}",
+            "okhttp-logging-interceptor"     : "com.squareup.okhttp3:logging-interceptor:${versions["okhttpVersion"]}",
+            "rxjava"                         : "io.reactivex.rxjava2:rxjava:${versions["rxjavaVersion"]}",
+            "rxandroid"                      : "io.reactivex.rxjava2:rxandroid:${versions["rxandroidVersion"]}",
+            "baseRecyclerViewAdapterHelper"  : "com.github.CymChad:BaseRecyclerViewAdapterHelper:${versions["baseRecyclerViewAdapterHelperVersion"]}",
+            "logger"                         : "com.orhanobut:logger:${versions.loggerVersion}",
+            "amap-3dmap"                     : "com.amap.api:3dmap:${versions.amap3dmapVersion}",
+            "zloading"                       : "com.zyao89:zloading:${versions.zloadingVersion}",
+            "banner"                         : "com.youth.banner:banner:${versions["bannerVersion"]}",
+            "glide"                          : "com.github.bumptech.glide:glide:${versions["glideVersion"]}",
+            "glide-compiler"                 : "com.github.bumptech.glide:compiler:${versions["glideVersion"]}"
+    ]
+}
