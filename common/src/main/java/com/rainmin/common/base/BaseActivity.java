@@ -28,25 +28,6 @@ import android.widget.Toast;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-
-/***
- * 本项目所有activity的直接父类
- * <dl>
- * Class Description
- * <dd>项目名称：AppFrame
- * <dd>类名称：BaseActivity
- * <dd>类描述： 本项目所有activity的直接父类，此类抽取了所有activity的共性，并进行了一些初始化操作。
- *              注意：1.如果子类需要展现菜单栏，需要子类Activity去实现onCreateOptionsMenu方法；
- *                    2.如果菜单栏只有一个操作，需要显示文字，则在Menu文件中<item/>不设置android:icon属性，设置此属性则显示该操作的Icon。
- * <dd>创建时间：2017年6月6日10:29:58
- * <dd>修改人：无
- * <dd>修改时间：无
- * <dd>修改备注：无
- * </dl>
- *
- * @author lujing
- * @version 1.0
- */
 public abstract class BaseActivity extends AppCompatActivity {
 
     Toolbar mToolbar;
