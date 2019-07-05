@@ -21,6 +21,10 @@ ext {
             daggerVersion                       : "2.21",
             permissionsdispatcherVersion        : "4.3.0",
             butterknifeVersion                  : "10.1.0",
+            arouterApiVersion                   : "1.5.0",
+            arouterCompilerVersion              : "1.2.2",
+            arouterRegisterVersion              : "1.0.2",
+
             litepalVersion                      : "3.0.0",
             retrofitVersion                     : "2.5.0",
             okhttpVersion                       : "3.13.1",
@@ -51,6 +55,10 @@ ext {
             "permissionsdispatcher_processor": "org.permissionsdispatcher:permissionsdispatcher-processor:${versions["permissionsdispatcherVersion"]}",
             "butterknife"                    : "com.jakewharton:butterknife:${versions["butterknifeVersion"]}",
             "butterknife_compiler"           : "com.jakewharton:butterknife-compiler:${versions["butterknifeVersion"]}",
+            "arouter-api"                    : "com.alibaba:arouter-api:${versions["arouterApiVersion"]}",
+            "arouter-compiler"               : "com.alibaba:arouter-compiler:${versions["arouterCompilerVersion"]}",
+            "arouter-register"               : "com.alibaba:arouter-register:${versions["arouterRegisterVersion"]}",
+
             "litepal"                        : "org.litepal.android:java:${versions["litepalVersion"]}",
             "retrofit"                       : "com.squareup.retrofit2:retrofit:${versions["retrofitVersion"]}",
             "retrofit-converter-gson"        : "com.squareup.retrofit2:converter-gson:${versions["retrofitVersion"]}",

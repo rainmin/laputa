@@ -2,6 +2,7 @@ package com.rainmin.laputa;
 
 import android.os.Bundle;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_dashboard:
                     mTextMessage.setText(R.string.title_dashboard);
+                    ARouter.getInstance().build("/main/main_activity").navigation();
                     return true;
                 case R.id.navigation_notifications:
                     mTextMessage.setText(R.string.title_notifications);

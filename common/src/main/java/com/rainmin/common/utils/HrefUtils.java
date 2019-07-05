@@ -356,19 +356,19 @@ public class HrefUtils {
     public static void setAnimation(Activity activity, int type) {
         switch (type) {
             case 0:
-                activity.overridePendingTransition(R.anim.push_left_in,
-                        R.anim.push_left_out);
+                activity.overridePendingTransition(R.anim.common_push_left_in,
+                        R.anim.common_push_left_out);
                 break;
             case 1:
                 activity.overridePendingTransition(0, 0);
                 break;
             case 2:
-                activity.overridePendingTransition(R.anim.z_zoomin_in,
-                        R.anim.z_zoomout_out);
+                activity.overridePendingTransition(R.anim.common_z_zoomin_in,
+                        R.anim.common_z_zoomout_out);
                 break;
             case 3:
-                activity.overridePendingTransition(R.anim.zoom_in_login,
-                        R.anim.zoom_out_splash);
+                activity.overridePendingTransition(R.anim.common_zoom_in_login,
+                        R.anim.common_zoom_out_splash);
                 break;
             default:
                 break;

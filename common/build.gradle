@@ -11,6 +11,12 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+        //Arouter路由配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -24,12 +30,14 @@ android {
         sourceCompatibility rootProject.ext.versions.javaSdkVersion
         targetCompatibility rootProject.ext.versions.javaSdkVersion
     }
+
+    //资源增加前缀，避免资源ID冲突
+    resourcePrefix 'common_'
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    api rootProject.ext.dependencies["multidex"]
     api rootProject.ext.dependencies["appcompat"]
     api rootProject.ext.dependencies["material"]
     api rootProject.ext.dependencies["constraintlayout"]
@@ -44,6 +52,8 @@ dependencies {
     annotationProcessor rootProject.ext.dependencies["permissionsdispatcher_processor"]
     api rootProject.ext.dependencies["butterknife"]
     annotationProcessor rootProject.ext.dependencies["butterknife_compiler"]
+    api rootProject.ext.dependencies["arouter-api"]
+    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
 
     api rootProject.ext.dependencies["retrofit"]
     api rootProject.ext.dependencies["retrofit-converter-gson"]

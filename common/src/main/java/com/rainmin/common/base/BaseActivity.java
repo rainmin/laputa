@@ -58,7 +58,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param title 标题栏的标题
      */
     public void initToolbar(int resId, String title) {
-        setContentView(R.layout.activity_base);
+        setContentView(R.layout.common_activity_base);
         f_content = findViewById(R.id.f_content);
         mToolbar = findViewById(R.id.toolbar);
         tv_title = findViewById(R.id.tv_title);
@@ -93,7 +93,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param title    标题栏的标题
      */
     public void initToolbar(int resId, boolean showBack, String title) {
-        setContentView(R.layout.activity_base);
+        setContentView(R.layout.common_activity_base);
         f_content = findViewById(R.id.f_content);
         mToolbar = findViewById(R.id.toolbar);
         tv_title = findViewById(R.id.tv_title);
@@ -130,7 +130,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param resId 布局文件ID
      */
     public void initNoToolbar(int resId) {
-        setContentView(R.layout.activity_base);
+        setContentView(R.layout.common_activity_base);
         f_content = findViewById(R.id.f_content);
         mToolbar = findViewById(R.id.toolbar);
         tv_title = findViewById(R.id.tv_title);
@@ -249,7 +249,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onBackPressed();
         finish();
         BaseActivity.this.overridePendingTransition(
-                R.anim.push_right_in, R.anim.push_right_out);
+                R.anim.common_push_right_in, R.anim.common_push_right_out);
     }
 
     /**

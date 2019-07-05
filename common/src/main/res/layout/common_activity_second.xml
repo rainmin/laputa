@@ -7,7 +7,7 @@
         android:layout_height="match_parent">
 
     <TextView
-            android:text="@string/secondactivity"
+            android:text="@string/common_secondactivity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView2"

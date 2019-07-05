@@ -22,6 +22,6 @@
         android:layout_below="@+id/loadView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="23dp"
-        android:textColor="@color/colorWhite"
-        android:text="@string/loading" />
+        android:textColor="@color/common_colorWhite"
+        android:text="@string/common_loading" />
 </RelativeLayout>

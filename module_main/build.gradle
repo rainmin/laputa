@@ -15,6 +15,12 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+        //Arouter路由配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -36,6 +42,9 @@ android {
         sourceCompatibility rootProject.ext.versions.javaSdkVersion
         targetCompatibility rootProject.ext.versions.javaSdkVersion
     }
+
+    //资源增加前缀，避免资源ID冲突
+    resourcePrefix 'main_'
 }
 
 dependencies {
@@ -45,4 +54,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
 }
