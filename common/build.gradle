@@ -64,4 +64,5 @@ dependencies {
     api rootProject.ext.dependencies["rxandroid"]
     api rootProject.ext.dependencies["baseRecyclerViewAdapterHelper"]
     api rootProject.ext.dependencies["logger"]
+    api rootProject.ext.dependencies["glide"]
 }
