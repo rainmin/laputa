@@ -6,10 +6,10 @@ ext {
             versionCode                         : 1,
             versionName                         : "1.0",
 
-            compileSdkVersion                   : 28,
-            buildToolsVersion                   : "28.0.3",
+            compileSdkVersion                   : 29,
+            buildToolsVersion                   : "29.0.3",
             minSdkVersion                       : 21,
-            targetSdkVersion                    : 28,
+            targetSdkVersion                    : 29,
             javaSdkVersion                      : 1.8,
 
             multidexVersion                     : "2.0.1",
