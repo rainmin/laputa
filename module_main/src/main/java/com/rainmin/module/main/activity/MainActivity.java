@@ -6,6 +6,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import cc.shinichi.library.ImagePreview;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -37,6 +39,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends BaseActivity {
 
     SwipeRefreshLayout refreshLayout;
+    RecyclerView recyclerView;
+
     BaseQuickAdapter<Xunjian, BaseViewHolder> mAdapter;
     XunjianApis mApis;
     CompositeDisposable mCompositeDisposable;
@@ -48,6 +52,7 @@ public class MainActivity extends BaseActivity {
         initNetEnv();
         initView();
         getData();
+//        useTestData();
     }
 
     @Override
@@ -84,7 +89,7 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-        RecyclerView recyclerView = findViewById(R.id.rv_xunjian);
+        recyclerView = findViewById(R.id.rv_xunjian);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
@@ -104,6 +109,15 @@ public class MainActivity extends BaseActivity {
                         .placeholder(R.drawable.main_ic_guidao)
                         .error(R.drawable.main_ic_guidao)
                         .into(imageView);
+                imageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        ImagePreview.getInstance()
+                                .setContext(MainActivity.this)
+                                .setImage("http://10.168.1.111:8080/api/file/download/guidao.jpg")
+                                .start();
+                    }
+                });
             }
         });
     }

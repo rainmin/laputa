@@ -35,7 +35,8 @@ ext {
             amap3dmapVersion                    : "6.7.0",
             zloadingVersion                     : "1.2.0",
             bannerVersion                       : "1.4.10",
-            glideVersion                        : "4.9.0"
+            glideVersion                        : "4.10.0",
+            bigImageViewPagerVersion            : "androidx-6.0.1"
     ]
 
 
@@ -74,6 +75,8 @@ ext {
             "zloading"                       : "com.zyao89:zloading:${versions.zloadingVersion}",
             "banner"                         : "com.youth.banner:banner:${versions["bannerVersion"]}",
             "glide"                          : "com.github.bumptech.glide:glide:${versions["glideVersion"]}",
-            "glide-compiler"                 : "com.github.bumptech.glide:compiler:${versions["glideVersion"]}"
+            "glide-compiler"                 : "com.github.bumptech.glide:compiler:${versions["glideVersion"]}",
+            "glide-okhttp3"                  : "com.github.bumptech.glide:okhttp3-integration:${versions["glideVersion"]}",
+            "bigImageViewPager"              : "com.github.SherlockGougou:BigImageViewPager:${versions["bigImageViewPagerVersion"]}"
     ]
 }
