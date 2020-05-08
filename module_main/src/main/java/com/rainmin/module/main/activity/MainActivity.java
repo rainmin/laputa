@@ -44,6 +44,7 @@ public class MainActivity extends BaseActivity {
     BaseQuickAdapter<Xunjian, BaseViewHolder> mAdapter;
     XunjianApis mApis;
     CompositeDisposable mCompositeDisposable;
+    int mPageNum = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +86,7 @@ public class MainActivity extends BaseActivity {
         refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                getData();
+                refreshData();
             }
         });
 
@@ -120,11 +121,24 @@ public class MainActivity extends BaseActivity {
                 });
             }
         });
+
+        mAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
+            @Override
+            public void onLoadMoreRequested() {
+                getData();
+            }
+        }, recyclerView);
+    }
+
+    private void refreshData() {
+        mPageNum = 1;
+        mAdapter.getData().clear();
+        getData();
     }
 
     private void getData() {
         refreshLayout.setRefreshing(true);
-        mApis.queryXunjianHistory("1", "20")
+        mApis.queryXunjianHistory(String.valueOf(mPageNum), "20")
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<HttpResult<Xunjian>>() {
@@ -140,8 +154,15 @@ public class MainActivity extends BaseActivity {
                     public void onNext(HttpResult<Xunjian> result) {
                         refreshLayout.setRefreshing(false);
                         if (result.getStatus() == 1) {
-                            mAdapter.setNewData(result.getData());
+                            if (result.getData().size() > 0) {
+                                mAdapter.addData(result.getData());
+                                mAdapter.loadMoreComplete();
+                                mPageNum++;
+                            } else {
+                                mAdapter.loadMoreEnd();
+                            }
                         } else {
+                            mAdapter.loadMoreFail();
                             showMessage(result.getMessage());
                             Log.e("laputa", result.getMessage());
                         }
@@ -150,6 +171,7 @@ public class MainActivity extends BaseActivity {
                     @Override
                     public void onError(Throwable e) {
                         refreshLayout.setRefreshing(false);
+                        mAdapter.loadMoreFail();
                         showMessage(e.getMessage());
                         Log.e("laputa", e.getMessage());
                     }
@@ -176,5 +198,6 @@ public class MainActivity extends BaseActivity {
             list.add(xunjian);
         }
         mAdapter.setNewData(list);
+        mAdapter.loadMoreEnd();
     }
 }

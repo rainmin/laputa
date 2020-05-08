@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="array_dashboard" tools:ignore="ExtraTranslation">
+        <item>@string/xunjian_hist</item>
+        <item>功能二</item>
+        <item>功能三</item>
+        <item>功能四</item>
+        <item>功能五</item>
+    </string-array>
+</resources>

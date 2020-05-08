@@ -10,6 +10,6 @@ import retrofit2.http.Query;
 public interface XunjianApis {
 
     @GET("api/xunjian/history")
-    Observable<HttpResult<Xunjian>> queryXunjianHistory(@Query("pageStart") String pageStart,
+    Observable<HttpResult<Xunjian>> queryXunjianHistory(@Query("pageNum") String pageNum,
                                                         @Query("pageSize") String pageSize);
 }
