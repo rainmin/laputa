@@ -8,6 +8,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.rainmin.common.utils.HrefUtils;
 import com.rainmin.common.widget.LineItemDecoration;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -102,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
 
                         }
                     });
+                } else {
+                    HrefUtils.getInstance().hrefActivity(MainActivity.this, LoginActivity.class);
                 }
             }
         });
